@@ -1,0 +1,154 @@
+/* Utility classes for common patterns */
+
+/* Spacing utilities */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Display utilities */
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Flex utilities */
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.gap-1 {
+  gap: var(--bds-spacing-1);
+}
+
+.gap-2 {
+  gap: var(--bds-spacing-2);
+}
+
+.gap-3 {
+  gap: var(--bds-spacing-3);
+}
+
+.gap-4 {
+  gap: var(--bds-spacing-4);
+}
+
+/* Text utilities */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Position utilities */
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+/* Border utilities */
+.rounded-sm {
+  border-radius: var(--bds-borderRadius-sm);
+}
+
+.rounded {
+  border-radius: var(--bds-borderRadius-base);
+}
+
+.rounded-md {
+  border-radius: var(--bds-borderRadius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--bds-borderRadius-lg);
+}
+
+.rounded-full {
+  border-radius: var(--bds-borderRadius-full);
+}
+
+/* Shadow utilities */
+.shadow-sm {
+  box-shadow: var(--bds-shadow-sm);
+}
+
+.shadow {
+  box-shadow: var(--bds-shadow-base);
+}
+
+.shadow-md {
+  box-shadow: var(--bds-shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--bds-shadow-lg);
+}
