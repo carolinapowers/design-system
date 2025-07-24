@@ -50,17 +50,35 @@ Object.defineProperty(window, 'getComputedStyle', {
 })
 
 // Mock DOMRect for getBoundingClientRect
-global.DOMRect = vi.fn().mockImplementation(() => ({
-  bottom: 0,
-  height: 0,
-  left: 0,
-  right: 0,
-  top: 0,
-  width: 0,
-  x: 0,
-  y: 0,
-  toJSON: vi.fn(),
-}))
+global.DOMRect = class DOMRect {
+  bottom = 0
+  height = 0
+  left = 0
+  right = 0
+  top = 0
+  width = 0
+  x = 0
+  y = 0
+  
+  constructor(x = 0, y = 0, width = 0, height = 0) {
+    this.x = x
+    this.y = y
+    this.width = width
+    this.height = height
+    this.left = x
+    this.top = y
+    this.right = x + width
+    this.bottom = y + height
+  }
+  
+  static fromRect(other?: DOMRectInit): DOMRect {
+    return new DOMRect(other?.x, other?.y, other?.width, other?.height)
+  }
+  
+  toJSON() {
+    return JSON.stringify(this)
+  }
+}
 
 // Mock getBoundingClientRect
 if (typeof Element !== 'undefined') {
