@@ -203,10 +203,10 @@ describe('Select', () => {
     expect(screen.getByRole('combobox')).toHaveClass('custom-class')
   })
 
-  it('forwards data-testid to wrapper', () => {
-    render(<Select data-testid="custom-select" options={sampleOptions} />)
+  it('forwards aria-label', () => {
+    render(<Select aria-label="custom-select" options={sampleOptions} />)
     
-    expect(screen.getByTestId('custom-select')).toBeInTheDocument()
+    expect(screen.getByLabelText('custom-select')).toBeInTheDocument()
   })
 
   it('connects helper text with aria-describedby', () => {

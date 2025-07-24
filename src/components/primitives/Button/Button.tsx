@@ -50,10 +50,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    */
   children?: ReactNode
   
-  /**
-   * Test ID for testing purposes
-   */
-  'data-testid'?: string
 }
 
 /**
@@ -87,7 +83,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       disabled,
       children,
-      'data-testid': testId,
       ...props
     },
     ref
@@ -128,7 +123,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         className={buttonClasses}
         disabled={isDisabled}
-        data-testid={testId}
         aria-disabled={isDisabled}
         aria-busy={loading}
         type={asChild ? undefined : 'button'}

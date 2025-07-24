@@ -114,10 +114,10 @@ describe('Button', () => {
     expect(screen.getByRole('button')).toHaveClass('custom-class')
   })
 
-  it('forwards data-testid', () => {
-    render(<Button data-testid="custom-button">Test</Button>)
+  it('forwards aria-label', () => {
+    render(<Button aria-label="custom-button">Test</Button>)
     
-    expect(screen.getByTestId('custom-button')).toBeInTheDocument()
+    expect(screen.getByLabelText('custom-button')).toBeInTheDocument()
   })
 
   it('renders as child component when asChild is true', () => {

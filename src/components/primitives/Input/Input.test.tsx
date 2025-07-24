@@ -135,10 +135,10 @@ describe('Input', () => {
     expect(screen.getByRole('textbox')).toHaveClass('custom-class')
   })
 
-  it('forwards data-testid to wrapper', () => {
-    render(<Input data-testid="custom-input" />)
+  it('forwards aria-label', () => {
+    render(<Input aria-label="custom-input" />)
     
-    expect(screen.getByTestId('custom-input')).toBeInTheDocument()
+    expect(screen.getByLabelText('custom-input')).toBeInTheDocument()
   })
 
   it('connects label to input with proper ID', () => {

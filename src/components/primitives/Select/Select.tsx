@@ -95,10 +95,6 @@ export interface SelectProps {
    */
   className?: string
   
-  /**
-   * Test ID for testing purposes
-   */
-  'data-testid'?: string
   
   /**
    * Children for custom content (overrides options/groups)
@@ -172,7 +168,6 @@ export const Select = ({
   onValueChange,
   disabled = false,
   className,
-  'data-testid': testId,
   children,
 }: SelectProps) => {
   // Generate unique ID for accessibility
@@ -237,7 +232,7 @@ export const Select = ({
   }
 
   return (
-    <div className={styles.selectWrapper} data-testid={testId}>
+    <div className={styles.selectWrapper}>
       {label && (
         <label 
           htmlFor={selectId} 

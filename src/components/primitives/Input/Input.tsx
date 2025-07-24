@@ -52,10 +52,6 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
    */
   rightIcon?: ReactNode
   
-  /**
-   * Test ID for testing purposes
-   */
-  'data-testid'?: string
 }
 
 /**
@@ -91,7 +87,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       rightIcon,
       className,
       disabled,
-      'data-testid': testId,
       id,
       ...props
     },
@@ -117,7 +112,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     const displayText = errorText || successText || helperText
 
     return (
-      <div className={styles.inputWrapper} data-testid={testId}>
+      <div className={styles.inputWrapper}>
         {label && (
           <label 
             htmlFor={inputId} 

@@ -79,10 +79,6 @@ export interface CheckboxProps {
    */
   className?: string
   
-  /**
-   * Test ID for testing purposes
-   */
-  'data-testid'?: string
   
   /**
    * Custom content to replace the label
@@ -163,7 +159,6 @@ export const Checkbox = forwardRef<
       name,
       value,
       className,
-      'data-testid': testId,
       children,
       ...props
     },
@@ -183,7 +178,7 @@ export const Checkbox = forwardRef<
     const displayErrorText = errorText
 
     return (
-      <div className={wrapperClasses} data-testid={testId}>
+      <div className={wrapperClasses}>
         <CheckboxPrimitive.Root
           ref={ref}
           className={styles.root}
