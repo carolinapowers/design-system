@@ -18,14 +18,14 @@ const tokens = {
 }
 
 // Generate TypeScript types
-function generateTypes(obj: any, prefix = ''): string {
+function generateTypes(obj: Record<string, unknown>, prefix = ''): string {
   let types = ''
   
   for (const [key, value] of Object.entries(obj)) {
     const typeName = prefix + key.charAt(0).toUpperCase() + key.slice(1)
     
     if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
-      types += generateTypes(value, typeName)
+      types += generateTypes(value as Record<string, unknown>, typeName)
     } else {
       const values = typeof value === 'object' && value !== null 
         ? Object.keys(value).map(k => `'${k}'`).join(' | ')
@@ -46,15 +46,15 @@ function generateTypes(obj: any, prefix = ''): string {
 }
 
 // Generate CSS custom properties
-function generateCSS(obj: any, prefix = '--bds'): string {
+function generateCSS(obj: Record<string, unknown>, prefix = '--bds'): string {
   let css = ':root {\n'
   
-  function processObject(obj: any, currentPrefix: string) {
+  function processObject(obj: Record<string, unknown>, currentPrefix: string) {
     for (const [key, value] of Object.entries(obj)) {
       const cssVar = `${currentPrefix}-${key}`
       
       if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
-        processObject(value, cssVar)
+        processObject(value as Record<string, unknown>, cssVar)
       } else if (Array.isArray(value)) {
         css += `  ${cssVar}: ${value.join(', ')};\n`
       } else {
@@ -70,7 +70,7 @@ function generateCSS(obj: any, prefix = '--bds'): string {
 }
 
 // Generate JavaScript/TypeScript constants
-function generateConstants(obj: any, name: string): string {
+function generateConstants(obj: Record<string, unknown>, name: string): string {
   return `export const ${name} = ${JSON.stringify(obj, null, 2)} as const\n\n`
 }
 
@@ -126,4 +126,5 @@ writeFileSync(resolve(__dirname, 'index.ts'), constants)
 writeFileSync(resolve(__dirname, '../../dist/tokens/index.css'), css)
 writeFileSync(resolve(__dirname, '../styles/tokens.css'), css)
 
+// eslint-disable-next-line no-console
 console.log('✅ Design tokens generated successfully!')
