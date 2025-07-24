@@ -82,6 +82,22 @@ export const colors = {
     "800": "#262626",
     "900": "#171717",
     "950": "#0a0a0a"
+  },
+  "background": {
+    "primary": "#ffffff",
+    "secondary": "#f9fafb",
+    "tertiary": "#f3f4f6"
+  },
+  "text": {
+    "primary": "#111827",
+    "secondary": "#6b7280",
+    "tertiary": "#9ca3af",
+    "inverse": "#ffffff"
+  },
+  "border": {
+    "primary": "#e5e7eb",
+    "secondary": "#d1d5db",
+    "focus": "#3b82f6"
   }
 } as const
 

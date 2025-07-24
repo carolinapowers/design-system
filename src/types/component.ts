@@ -10,7 +10,7 @@ export interface BaseComponentProps {
 export type Size = 'sm' | 'md' | 'lg' | 'xl'
 
 // Common variant types
-export type Variant = 'primary' | 'secondary' | 'ghost' | 'destructive'
+export type Variant = 'primary' | 'secondary' | 'ghost' | 'destructive' | 'outline'
 
 // Utility type for forwarding refs
 export type ComponentRef<T extends keyof JSX.IntrinsicElements> = ElementRef<T>

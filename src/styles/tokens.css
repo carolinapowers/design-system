@@ -67,6 +67,16 @@
   --bds-color-neutral-800: #262626;
   --bds-color-neutral-900: #171717;
   --bds-color-neutral-950: #0a0a0a;
+  --bds-color-background-primary: #ffffff;
+  --bds-color-background-secondary: #f9fafb;
+  --bds-color-background-tertiary: #f3f4f6;
+  --bds-color-text-primary: #111827;
+  --bds-color-text-secondary: #6b7280;
+  --bds-color-text-tertiary: #9ca3af;
+  --bds-color-text-inverse: #ffffff;
+  --bds-color-border-primary: #e5e7eb;
+  --bds-color-border-secondary: #d1d5db;
+  --bds-color-border-focus: #3b82f6;
   --bds-typography-fontFamily-sans: Inter, system-ui, -apple-system, sans-serif;
   --bds-typography-fontFamily-mono: JetBrains Mono, Consolas, Monaco, monospace;
   --bds-typography-fontSize-xs: 0.75rem;

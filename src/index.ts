@@ -22,6 +22,10 @@ export type { BadgeProps } from './components/primitives/Badge'
 export { Card } from './components/layout/Card'
 export type { CardProps, CardHeaderProps, CardContentProps, CardFooterProps } from './components/layout/Card'
 
+// Export composite components
+export { Modal, ModalRoot, ModalTrigger, ModalPortal, ModalOverlay, ModalContent, ModalTitle, ModalDescription, ModalClose } from './components/composite/Modal'
+export type { ModalProps } from './components/composite/Modal'
+
 // Export utilities
 export { cn } from './utils/cn'
 

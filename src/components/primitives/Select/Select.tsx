@@ -253,7 +253,7 @@ export const Select = ({
           id={selectId}
           aria-describedby={displayText ? `${selectId}-text` : undefined}
           aria-invalid={actualVariant === 'error'}
-          required={required}
+          aria-required={required}
           {...triggerProps}
         >
           <SelectPrimitive.Value placeholder={placeholder} />

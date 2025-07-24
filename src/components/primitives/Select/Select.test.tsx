@@ -51,7 +51,7 @@ describe('Select', () => {
     expect(label).toBeInTheDocument()
     // Check for required attribute on combobox
     const trigger = screen.getByRole('combobox')
-    expect(trigger).toHaveAttribute('required')
+    expect(trigger).toHaveAttribute('aria-required', 'true')
   })
 
   it('displays placeholder text', () => {
