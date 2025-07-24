@@ -1,6 +1,8 @@
-# Buffer Design System
+# Design System Inspired by Buffer
 
 A modern, accessible design system built with Radix UI primitives, CSS Modules, and design tokens. This system provides a comprehensive set of reusable components and design tokens to ensure consistency across Buffer's products.
+
+👉 [Storybook Documentation](design-system-iota-five.vercel.app)
 
 <img width="1701" height="887" alt="Buffer Design System Preview" src="https://github.com/user-attachments/assets/6ab101de-250d-4e6b-92a1-96cd59098cd6" />
 
@@ -234,4 +236,3 @@ MIT © Buffer
 - [Storybook Documentation](https://your-storybook-url.com)
 - [Design Guidelines](./CLAUDE.md)
 - [Contributing Guidelines](#contributing)
-- [Changelog](./CHANGELOG.md)
