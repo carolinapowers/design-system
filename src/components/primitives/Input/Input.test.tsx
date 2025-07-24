@@ -26,8 +26,9 @@ describe('Input', () => {
   it('shows required indicator when required', () => {
     render(<Input label="Email" required />)
     
-    const label = screen.getByText('Email *')
+    const label = screen.getByText('Email')
     expect(label).toBeInTheDocument()
+    expect(screen.getByRole('textbox')).toHaveAttribute('required')
   })
 
   it('applies size classes correctly', () => {
@@ -173,11 +174,10 @@ describe('Input', () => {
   })
 
   it('supports different input types', () => {
-    const { rerender } = render(<Input type="email" />)
-    expect(screen.getByRole('textbox')).toHaveAttribute('type', 'email')
+    const { rerender } = render(<Input type="email" label="Email" />)
+    expect(screen.getByLabelText('Email')).toHaveAttribute('type', 'email')
     
-    rerender(<Input type="password" />)
-    const passwordInput = screen.getByRole('textbox', { hidden: true })
-    expect(passwordInput).toHaveAttribute('type', 'password')
+    rerender(<Input type="password" label="Password" />)
+    expect(screen.getByLabelText('Password')).toHaveAttribute('type', 'password')
   })
 })

@@ -150,7 +150,7 @@ export const Checkbox = forwardRef<
       label,
       description,
       errorText,
-      checked,
+      checked: _checked,
       defaultChecked,
       indeterminate,
       onCheckedChange,
@@ -174,15 +174,15 @@ export const Checkbox = forwardRef<
       className
     )
 
-    const hasContent = label || description || children
     const displayErrorText = errorText
+    const hasContent = label || description || children || displayErrorText
 
     return (
       <div className={wrapperClasses}>
         <CheckboxPrimitive.Root
           ref={ref}
           className={styles.root}
-          checked={indeterminate ? 'indeterminate' : checked}
+          checked={indeterminate ? 'indeterminate' : _checked}
           defaultChecked={defaultChecked}
           onCheckedChange={onCheckedChange}
           disabled={disabled}

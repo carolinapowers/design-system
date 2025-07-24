@@ -95,7 +95,6 @@ export interface SelectProps {
    */
   className?: string
   
-  
   /**
    * Children for custom content (overrides options/groups)
    */
@@ -163,12 +162,13 @@ export const Select = ({
   successText,
   options = [],
   groups = [],
-  value,
+  value: _value,
   defaultValue,
   onValueChange,
   disabled = false,
   className,
   children,
+  ...triggerProps
 }: SelectProps) => {
   // Generate unique ID for accessibility
   const selectId = `select-${Math.random().toString(36).substr(2, 9)}`
@@ -243,7 +243,7 @@ export const Select = ({
       )}
       
       <SelectPrimitive.Root
-        value={value}
+        value={_value}
         defaultValue={defaultValue}
         onValueChange={onValueChange}
         disabled={disabled}
@@ -253,6 +253,8 @@ export const Select = ({
           id={selectId}
           aria-describedby={displayText ? `${selectId}-text` : undefined}
           aria-invalid={actualVariant === 'error'}
+          required={required}
+          {...triggerProps}
         >
           <SelectPrimitive.Value placeholder={placeholder} />
           <SelectPrimitive.Icon className={styles.icon}>
@@ -288,6 +290,6 @@ export const Select = ({
 
 // Export sub-components for advanced usage
 export const SelectItem = SelectPrimitive.Item
-export const SelectGroup = SelectPrimitive.Group
+export const SelectGroupPrimitive = SelectPrimitive.Group
 export const SelectLabel = SelectPrimitive.Label
 export const SelectSeparator = SelectPrimitive.Separator

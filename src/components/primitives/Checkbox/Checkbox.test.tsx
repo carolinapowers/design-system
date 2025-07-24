@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { userEvent } from '@testing-library/user-event'
 import { describe, it, expect, vi } from 'vitest'
+import '@testing-library/jest-dom'
 import { Checkbox } from './Checkbox'
 
 describe('Checkbox', () => {
@@ -24,7 +25,10 @@ describe('Checkbox', () => {
   it('shows required indicator when required', () => {
     render(<Checkbox label="Terms" required />)
     
-    expect(screen.getByText('Terms *')).toBeInTheDocument()
+    expect(screen.getByText('Terms')).toBeInTheDocument()
+    expect(screen.getByText('*')).toBeInTheDocument()
+    // Check aria-required instead of required attribute for Radix checkbox
+    expect(screen.getByRole('checkbox')).toHaveAttribute('aria-required', 'true')
   })
 
   it('handles checked state', async () => {
